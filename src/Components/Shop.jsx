@@ -6,7 +6,7 @@ import Cart from './Cart';
 import CartList from './CartList';
 import Alert from './Alert';
 
-
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Shop = () => {
     const [goods, setGoods] = useState([]);
@@ -93,7 +93,7 @@ const Shop = () => {
     useEffect(() => {
         fetch(API_URL, {
             headers: {
-                'Authorization': '0d04dcfa-21c9f2e1-c4c298d0-293aaf98'
+                'Authorization': API_KEY
             }
         }).then(response => response.json()).then(data => setGoods(data.featured))
             .catch(err => console.warn(err))
