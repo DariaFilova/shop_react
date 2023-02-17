@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { API_KEY, API_URL } from '../config';
+import { API_URL } from '../config';
 import Loader from './Loader';
 import GoodsList from './GoodsList';
 import Cart from './Cart';
 import CartList from './CartList';
 import Alert from './Alert';
+
+
 
 const Shop = () => {
     const [goods, setGoods] = useState([]);
@@ -91,7 +93,7 @@ const Shop = () => {
     useEffect(() => {
         fetch(API_URL, {
             headers: {
-                'Authorization': API_KEY
+                'Authorization': '0d04dcfa-21c9f2e1-c4c298d0-293aaf98'
             }
         }).then(response => response.json()).then(data => setGoods(data.featured))
             .catch(err => console.warn(err))
