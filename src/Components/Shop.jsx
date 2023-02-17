@@ -93,7 +93,7 @@ const Shop = () => {
     useEffect(() => {
         fetch(API_URL, {
             headers: {
-                'Authorization': API_KEY
+                'Authorization': '0d04dcfa-21c9f2e1-c4c298d0-293aaf98'
             }
         }).then(response => response.json()).then(data => setGoods(data.featured))
             .catch(err => console.warn(err))
